@@ -37,13 +37,13 @@ modules:
     buildsystem: cmake
     config-opts:
       - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+    post-install:
+      - install -Dm644 com.js8call.JS8Call.metainfo.xml -t /app/share/metainfo/
     sources:
       - type: archive
-        url: http://files.js8call.com/2.2.0/js8call-2.2.0.tgz
-        sha256: a831d2947452a1778c6ff9c0962651f7aaeec81dc92923f09bccbc4f18973a91
+        url: https://github.com/JS8Call-improved/JS8Call-improved/archive/refs/tags/v2.2.0.tar.gz
+        sha256: 7cedd3222c211ef0dcb29fb2b88cab2fd43278256e4b605d7737855107be9dfe
       - type: patch
         path: js8call_cmake.patch
       - type: file
         path: com.js8call.JS8Call.metainfo.xml
-    post-install:
-      - install -Dm644 com.js8call.JS8Call.metainfo.xml /app/share/metainfo/com.js8call.JS8Call.metainfo.xml
